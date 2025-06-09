@@ -1,0 +1,154 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Ektra Premium Dinner Set (24 pieces)",
+      "originalPrice": 2999,
+      "discountedPrice": 2299,
+      "quantity": 15,
+      "image": "https://via.placeholder.com/300x200/f8f9fa/6c757d?text=Dinner+Set",
+      "category": "dinnerware",
+      "description": "Complete 24-piece dinner set with plates, bowls, and serving dishes. Perfect for family gatherings and special occasions."
+    },
+    {
+      "id": 2,
+      "name": "Ektra Crystal Glass Set (6 pieces)",
+      "originalPrice": 1599,
+      "discountedPrice": 1199,
+      "quantity": 8,
+      "image": "https://via.placeholder.com/300x200/e3f2fd/1976d2?text=Crystal+Glasses",
+      "category": "glassware",
+      "description": "Elegant crystal glasses perfect for special occasions. High-quality material with beautiful clarity."
+    },
+    {
+      "id": 3,
+      "name": "Ektra Non-Stick Cookware Set (5 pieces)",
+      "originalPrice": 3499,
+      "discountedPrice": 2799,
+      "quantity": 12,
+      "image": "https://via.placeholder.com/300x200/fff3e0/ff8f00?text=Cookware+Set",
+      "category": "cookware",
+      "description": "Premium non-stick cookware set with different sized pans. Easy to clean and long-lasting coating."
+    },
+    {
+      "id": 4,
+      "name": "Ektra Ceramic Serving Bowl Set (3 pieces)",
+      "originalPrice": 899,
+      "discountedPrice": 699,
+      "quantity": 20,
+      "image": "https://via.placeholder.com/300x200/f1f8e9/689f38?text=Ceramic+Bowls",
+      "category": "dinnerware",
+      "description": "Beautiful ceramic bowls for serving salads and side dishes. Microwave and dishwasher safe."
+    },
+    {
+      "id": 5,
+      "name": "Ektra Stainless Steel Pressure Cooker (5L)",
+      "originalPrice": 2499,
+      "discountedPrice": 1999,
+      "quantity": 10,
+      "image": "https://via.placeholder.com/300x200/fce4ec/c2185b?text=Pressure+Cooker",
+      "category": "cookware",
+      "description": "Heavy-duty pressure cooker for quick and efficient cooking. Safety features and durable construction."
+    },
+    {
+      "id": 6,
+      "name": "Ektra Designer Plate Set (12 pieces)",
+      "originalPrice": 1799,
+      "discountedPrice": 1399,
+      "quantity": 18,
+      "image": "https://via.placeholder.com/300x200/f3e5f5/7b1fa2?text=Designer+Plates",
+      "category": "dinnerware",
+      "description": "Stylish designer plates in various sizes. Modern patterns that complement any dining setup."
+    },
+    {
+      "id": 7,
+      "name": "Ektra Wine Glass Collection (8 pieces)",
+      "originalPrice": 2199,
+      "discountedPrice": 1699,
+      "quantity": 6,
+      "image": "https://via.placeholder.com/300x200/e8f5e8/2e7d32?text=Wine+Glasses",
+      "category": "glassware",
+      "description": "Premium wine glasses for wine enthusiasts. Perfect weight and balance for optimal wine tasting."
+    },
+    {
+      "id": 8,
+      "name": "Ektra Non-Stick Tawa (28cm)",
+      "originalPrice": 799,
+      "discountedPrice": 599,
+      "quantity": 25,
+      "image": "https://via.placeholder.com/300x200/fff8e1/f57f17?text=Non-Stick+Tawa",
+      "category": "cookware",
+      "description": "Large non-stick tawa perfect for making rotis and pancakes. Even heat distribution."
+    },
+    {
+      "id": 9,
+      "name": "Ektra Tea Cup & Saucer Set (6 pieces)",
+      "originalPrice": 999,
+      "discountedPrice": 749,
+      "quantity": 14,
+      "image": "https://via.placeholder.com/300x200/efebe9/5d4037?text=Tea+Cup+Set",
+      "category": "dinnerware",
+      "description": "Elegant tea cups with matching saucers. Perfect for afternoon tea and entertaining guests."
+    },
+    {
+      "id": 10,
+      "name": "Ektra Storage Container Set (5 pieces)",
+      "originalPrice": 1299,
+      "discountedPrice": 999,
+      "quantity": 22,
+      "image": "https://via.placeholder.com/300x200/e0f2f1/00695c?text=Storage+Containers",
+      "category": "dinnerware",
+      "description": "Airtight storage containers in various sizes. Keep your food fresh for longer periods."
+    },
+    {
+      "id": 11,
+      "name": "Ektra Juice Glass Set (6 pieces)",
+      "originalPrice": 699,
+      "discountedPrice": 499,
+      "quantity": 16,
+      "image": "https://via.placeholder.com/300x200/e1f5fe/0277bd?text=Juice+Glasses",
+      "category": "glassware",
+      "description": "Perfect glasses for serving fresh juices and beverages. Comfortable grip and elegant design."
+    },
+    {
+      "id": 12,
+      "name": "Ektra Heavy Bottom Kadai (24cm)",
+      "originalPrice": 1599,
+      "discountedPrice": 1299,
+      "quantity": 8,
+      "image": "https://via.placeholder.com/300x200/fafafa/424242?text=Heavy+Kadai",
+      "category": "cookware",
+      "description": "Heavy bottom kadai for deep frying and curries. Excellent heat retention and distribution."
+    },
+    {
+      "id": 13,
+      "name": "Ektra Bone China Cup Set (8 pieces)",
+      "originalPrice": 1899,
+      "discountedPrice": 1499,
+      "quantity": 12,
+      "image": "https://via.placeholder.com/300x200/fdf6e3/f9a825?text=Bone+China+Cups",
+      "category": "dinnerware",
+      "description": "Luxurious bone china cups with elegant finish. Perfect for formal dining and special occasions."
+    },
+    {
+      "id": 14,
+      "name": "Ektra Glass Water Bottle Set (4 pieces)",
+      "originalPrice": 1199,
+      "discountedPrice": 899,
+      "quantity": 20,
+      "image": "https://via.placeholder.com/300x200/dbeafe/3b82f6?text=Water+Bottles",
+      "category": "glassware",
+      "description": "Eco-friendly glass water bottles with leak-proof caps. BPA-free and easy to clean."
+    },
+    {
+      "id": 15,
+      "name": "Ektra Cast Iron Pan (26cm)",
+      "originalPrice": 2299,
+      "discountedPrice": 1899,
+      "quantity": 7,
+      "image": "https://via.placeholder.com/300x200/f5f5f5/616161?text=Cast+Iron+Pan",
+      "category": "cookware",
+      "description": "Premium cast iron pan for professional cooking. Excellent heat retention and versatility."
+    }
+  ]
+}
