@@ -11,7 +11,7 @@ import Papa from 'papaparse';
  */
 export async function loadInventory() {
   try {
-    const response = await fetch('/kashmira-shah/inventory.csv');
+    const response = await fetch('/inventory.csv');
     const csvText = await response.text();
     
     return new Promise((resolve, reject) => {

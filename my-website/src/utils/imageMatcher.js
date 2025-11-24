@@ -19,7 +19,7 @@ export function safeName(name) {
  */
 export function findProductImage(productName) {
   const folderName = safeName(productName);
-  const imagePath = `/kashmira-shah/images/${folderName}`;
+  const imagePath = `/images/${folderName}`;
   
   // In a real scenario, we'd need to check if files exist
   // For now, we'll return the expected path and let the component handle missing images
@@ -44,11 +44,11 @@ export function getProductImagePath(productName, availableImages = []) {
     ).sort();
     
     if (productImages.length > 0) {
-      return `/kashmira-shah/images/${productImages[0]}`;
+      return `/images/${productImages[0]}`;
     }
   }
   
   // Fallback: return expected path (component will handle 404)
-  return `/kashmira-shah/images/${folderName}/${folderName}_1.jpg`;
+  return `/images/${folderName}/${folderName}_1.jpg`;
 }
 

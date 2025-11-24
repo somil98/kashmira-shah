@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import QuantitySelector from './QuantitySelector';
 import WhatsAppButton from './WhatsAppButton';
+import ImageGallery from './ImageGallery';
+import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(1);
-  const [imageSrc, setImageSrc] = useState(null);
-  const [imageError, setImageError] = useState(false);
+  const [showAddedFeedback, setShowAddedFeedback] = useState(false);
+  
+  const { addToCart, isInCart, getCartQuantity } = useCart();
 
   // Calculate discount percentage
   const discountPercent = product.mrp > 0 && product.mrp > product.sellingPrice 
@@ -21,64 +24,42 @@ export default function ProductCard({ product }) {
   
   // Check if low stock (5 or fewer)
   const isLowStock = product.quantity <= 5 && product.quantity > 0;
-
-  useEffect(() => {
-    // Construct image path - try first image in folder
-    // The actual file will be determined by the browser (handles 404 gracefully)
-    const folderName = product.imageFolder;
-    const imageExtensions = ['webp', 'jpg', 'jpeg', 'png', 'avif'];
-    
-    // Try to find image by attempting to load it
-    const tryLoadImage = (path) => {
-      const img = new Image();
-      img.onload = () => {
-        setImageSrc(path);
-        setImageError(false);
-      };
-      img.onerror = () => {
-        // Try next extension
-        const currentExt = path.split('.').pop();
-        const extIndex = imageExtensions.indexOf(currentExt.toLowerCase());
-        if (extIndex < imageExtensions.length - 1) {
-          const nextExt = imageExtensions[extIndex + 1];
-          tryLoadImage(`/kashmira-shah/images/${folderName}/${folderName}_1.${nextExt}`);
-        } else {
-          // All extensions tried, show placeholder
-          setImageError(true);
-        }
-      };
-      img.src = path;
-    };
-
-    // Start with webp (most common)
-    tryLoadImage(`/kashmira-shah/images/${folderName}/${folderName}_1.webp`);
-  }, [product.imageFolder]);
+  
+  // Check if item is already in cart
+  const inCart = isInCart(product.id);
+  const cartQuantity = getCartQuantity(product.id);
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
 
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    setShowAddedFeedback(true);
+    setTimeout(() => setShowAddedFeedback(false), 1500);
+    // Reset quantity selector after adding
+    setQuantity(1);
+  };
+
   return (
-    <div className="product-card">
+    <div className={`product-card ${inCart ? 'in-cart' : ''}`}>
+      {/* In Cart Indicator */}
+      {inCart && (
+        <span className="in-cart-badge">
+          <i className="fas fa-check"></i> In Selection ({cartQuantity})
+        </span>
+      )}
+      
       {/* Discount Badge */}
       {discountPercent > 0 && (
         <span className="discount-badge">-{discountPercent}% OFF</span>
       )}
       
       <div className="product-image">
-        {imageSrc && !imageError ? (
-          <img 
-            src={imageSrc} 
-            alt={product.name} 
-            loading="lazy"
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <div className="product-image-placeholder">
-            <i className="fas fa-image"></i>
-            <span>No Image</span>
-          </div>
-        )}
+        <ImageGallery 
+          folderName={product.imageFolder} 
+          productName={product.name}
+        />
       </div>
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
@@ -124,7 +105,25 @@ export default function ProductCard({ product }) {
             value={quantity}
             onChange={handleQuantityChange}
           />
-          <WhatsAppButton product={product} quantity={quantity} />
+          
+          <div className="product-buttons">
+            <button 
+              className={`btn btn-add-cart ${showAddedFeedback ? 'added' : ''}`}
+              onClick={handleAddToCart}
+              disabled={product.quantity === 0}
+            >
+              {showAddedFeedback ? (
+                <>
+                  <i className="fas fa-check"></i> Added!
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-plus"></i> Add to Selection
+                </>
+              )}
+            </button>
+            <WhatsAppButton product={product} quantity={quantity} />
+          </div>
         </div>
       </div>
     </div>

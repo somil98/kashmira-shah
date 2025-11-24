@@ -20,7 +20,7 @@ export function useProducts() {
         const productsWithImages = loadedProducts.map(product => {
           const folderName = safeName(product.name);
           // Try to find first image in folder (will be handled by component)
-          const imagePath = `/kashmira-shah/images/${folderName}`;
+          const imagePath = `/images/${folderName}`;
           
           return {
             ...product,

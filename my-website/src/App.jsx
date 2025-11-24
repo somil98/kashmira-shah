@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
+import { CartProvider } from './context/CartContext';
 import './App.css';
 
-function App() {
+function AppContent() {
   // Handle GitHub Pages routing (404.html redirect)
   useEffect(() => {
     // Check if we're on GitHub Pages and need to handle the query parameter redirect
@@ -56,24 +58,33 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/kashmira-shah">
-      <div className="App">
-        {/* Trust Banner - Shows on all pages */}
-        <div className="trust-banner">
-          <span><i className="fas fa-star"></i> 10+ Years Experience</span>
-          <span><i className="fas fa-check-circle"></i> Authentic Ektra Products</span>
-          <span><i className="fas fa-truck"></i> Pan-India Delivery</span>
-        </div>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog />} />
-          </Routes>
-        </main>
-        <Footer />
+    <div className="App">
+      {/* Trust Banner - Shows on all pages */}
+      <div className="trust-banner">
+        <span><i className="fas fa-star"></i> 10+ Years Experience</span>
+        <span><i className="fas fa-check-circle"></i> Authentic Ektra Products</span>
+        <span><i className="fas fa-truck"></i> Pan-India Delivery</span>
       </div>
-    </Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+        </Routes>
+      </main>
+      <Footer />
+      <Cart />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <CartProvider>
+      <Router basename="/">
+        <AppContent />
+      </Router>
+    </CartProvider>
   );
 }
 
