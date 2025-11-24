@@ -58,6 +58,12 @@ function App() {
   return (
     <Router basename="/kashmira-shah">
       <div className="App">
+        {/* Trust Banner - Shows on all pages */}
+        <div className="trust-banner">
+          <span><i className="fas fa-star"></i> 10+ Years Experience</span>
+          <span><i className="fas fa-check-circle"></i> Authentic Ektra Products</span>
+          <span><i className="fas fa-truck"></i> Pan-India Delivery</span>
+        </div>
         <Header />
         <main>
           <Routes>
